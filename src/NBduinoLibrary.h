@@ -6,20 +6,20 @@
 class NBduino
 {
   public:
-	NBduino(const char* mqttServerP, const int mqttPortP, const char* mqttUserP, const char* mqttPasswordP);
+	NBduino(const String mqttServerP, const int mqttPortP, const String mqttUserP, const String mqttPasswordP);
 	bool begin();
 	wakeup();
 	sleep();
 	String reqIMEI();
-	publish(const char* topic, const char* value);
+	publish(const String topic, const String value);
   private:
 	const int led=13;
 	const int reset=7;
 	const int pwrkey=8;
-	char mqttServer[20];
+	String mqttServer;
 	int mqttPort;
-	char mqttUser[20];
-	char mqttPassword[20];
+	String mqttUser;
+	String mqttPassword;
 	unsigned long lastTime;
 	const unsigned long TimeToConn=120000;
 	char inChar;
