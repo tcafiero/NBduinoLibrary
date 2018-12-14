@@ -1,4 +1,4 @@
-#include "NBduino.h"
+#include <NBduinoLibrary.h>
 
 NBduino NBiot("54.76.137.235", 18224, "test", "test")
 
@@ -11,3 +11,8 @@ void setup() {
   delay(300);
   NBiot.begin();
   }
+
+void loop() {
+  
+ }
+  

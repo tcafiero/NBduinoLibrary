@@ -1,6 +1,6 @@
-# NBduino
+# NBduinoLibrary
 
-NBduino Library for TopView NBduino Shield
+NBduinoLibrary for TopView NBduino Shield
 
 
 THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
