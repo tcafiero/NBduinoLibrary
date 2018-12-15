@@ -1,3 +1,14 @@
+/*
+  NBduinoLibrary
+  
+  
+  Arduino SHIELD: NBduino
+  Arduino BOARD: ARDUINO UNO Rev3 (or similar)
+
+  Author: Antonio Cafiero
+  Date: 14/12/2018
+*/
+
 #include <arduino.h>
 #include <NBduinoLibrary.h>
 
@@ -5,10 +16,10 @@ static SoftwareSerial mySerial(10, 11); //RX, TX
 
 NBduino::NBduino(const String mqttServerP, const int mqttPortP, const String mqttUserP, const String mqttPasswordP)
 {
-    mqttServer=mqttServerP;
-    mqttPort=mqttPortP;
-    mqttUser=mqttUserP;
-    mqttPassword=mqttPasswordP;
+    _mqttServer=mqttServerP;
+    _mqttPort=mqttPortP;
+    _mqttUser=mqttUserP;
+    _mqttPassword=mqttPasswordP;
 }
 
 bool NBduino::begin()
@@ -25,13 +36,13 @@ bool NBduino::begin()
     mySerial.println("AT+CEREG=5"); //restituisce i parametri della cella LTE
     delay (1500);
     mySerial.flush();
-    lastTime = millis();
+    _lastTime = millis();
     while (1)
     {
-        if (millis() - lastTime < TimeToConn) {
+        if (millis() - _lastTime < _TimeToConn) {
             // get incoming byte:
-            inChar = mySerial.read();
-            if ( inChar == '+') {
+            _inChar = mySerial.read();
+            if ( _inChar == '+') {
                 return true;
             }
         }
@@ -41,17 +52,17 @@ bool NBduino::begin()
 
 NBduino::wakeup()
 {
-    digitalWrite(reset, LOW);
-    digitalWrite(pwrkey, HIGH);
+    digitalWrite(_reset, LOW);
+    digitalWrite(_pwrkey, HIGH);
     delay(2000);
-    digitalWrite(pwrkey, LOW);
+    digitalWrite(_pwrkey, LOW);
 }
 
 NBduino::sleep()
 {
-    digitalWrite(pwrkey, HIGH);
+    digitalWrite(_pwrkey, HIGH);
     delay(2000);
-    digitalWrite(pwrkey, LOW);
+    digitalWrite(_pwrkey, LOW);
 }
 
 NBduino::publish(const String topic, const String value)
@@ -66,12 +77,12 @@ NBduino::publish(const String topic, const String value)
     for(i = 0; i<len; i++) {
         sprintf(outword+i*2, "%02X", s[i]);
     }
-    digitalWrite( led, HIGH );
+    digitalWrite( _led, HIGH );
     delay(2000);
     mySerial.print("AT+CMQNEW=\"");
-    mySerial.print(mqttServer);
+    mySerial.print(_mqttServer);
     mySerial.print("\",""\"");
-    mySerial.print(mqttPort);
+    mySerial.print(_mqttPort);
     mySerial.println("\",2400,100");
     delay(2000);
     mySerial.print("AT+CMQCON=0,3,");
@@ -80,9 +91,9 @@ NBduino::publish(const String topic, const String value)
     mySerial.print("\"");
     mySerial.print(",1200,0,0,");
     mySerial.print("\"""");
-    mySerial.print(mqttUser);
+    mySerial.print(_mqttUser);
     mySerial.print("\",""\"");
-    mySerial.print(mqttPassword);
+    mySerial.print(_mqttPassword);
     mySerial.println("\"");
     delay(2000);
     mySerial.print("AT+CMQPUB=0,\"");
@@ -97,7 +108,7 @@ NBduino::publish(const String topic, const String value)
     delay(2000);
     mySerial.println("AT+CMQDISCON=0");
     delay(2000);
-    digitalWrite(led, LOW);    //LED OFF
+    digitalWrite(_led, LOW);    //LED OFF
 }
 
 String NBduino::reqIMEI()
