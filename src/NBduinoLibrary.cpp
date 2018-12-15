@@ -14,12 +14,53 @@
 
 static SoftwareSerial mySerial(10, 11); //RX, TX
 
+NBduino::NBduino()
+{
+}
+
 NBduino::NBduino(const String mqttServer, const int mqttPort, const String mqttUser, const String mqttPassword)
 {
     _mqttServer=mqttServer;
     _mqttPort=mqttPort;
     _mqttUser=mqttUser;
     _mqttPassword=mqttPassword;
+}
+
+NBduino::setAPN(String APN)
+{
+  wakeup();
+  mySerial.begin(115200);
+  delay(1000);
+  mySerial.println("AT+IPR=4800");
+  delay (500);
+  mySerial.end();
+  mySerial.begin(4800);
+  delay(500);
+  mySerial.print("AT*MCGDEFCONT=");
+  mySerial.print("\"");
+  mySerial.print("IP");
+  mySerial.print("\"");
+  mySerial.print(",");
+  mySerial.print("\"");
+  mySerial.print(APN);
+  mySerial.println("\"");
+  delay(500);
+  mySerial.print("AT+CGDCONT=1,");
+  mySerial.print("\"");
+  mySerial.print("IP");
+  mySerial.print("\"");
+  mySerial.print(",");
+  mySerial.print("\"");
+  mySerial.print(APN);
+  mySerial.print("\"");
+  mySerial.print(",");
+  mySerial.print("\"");
+  mySerial.print("\"");
+  mySerial.println(",0,0,0,,,,,,0,,0");
+  delay(500);
+  mySerial.println("AT+CEREG=5");
+  delay(500);
+  mySerial.println("AT+COPS=?");	
 }
 
 bool NBduino::begin()

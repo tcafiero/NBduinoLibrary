@@ -17,7 +17,9 @@
 class NBduino
 {
   public:
+	NBduino();
 	NBduino(const String mqttServer, const int mqttPort, const String mqttUser, const String mqttPassword);
+	setAPN(String APN);
 	bool begin();
 	wakeup();
 	sleep();

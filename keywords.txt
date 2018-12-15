@@ -17,6 +17,7 @@ wakeup		KEYWORD2
 sleep		KEYWORD2
 reqIMEI		KEYWORD2
 publish		KEYWORD2
+setAPN		KEYWORD2
 
 
 #######################################
