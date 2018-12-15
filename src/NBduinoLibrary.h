@@ -19,6 +19,7 @@ class NBduino
   public:
 	NBduino();
 	NBduino(const String mqttServer, const int mqttPort, const String mqttUser, const String mqttPassword);
+	NBduino(const String mqttServer, const int mqttPort, const String mqttUser, const String mqttPassword, unsigned long TimeToConn);
 	setAPN(String APN);
 	bool begin();
 	wakeup();
@@ -34,7 +35,7 @@ class NBduino
 	String _mqttUser;
 	String _mqttPassword;
 	unsigned long _lastTime;
-	const unsigned long _TimeToConn=120000;
+	unsigned long _TimeToConn=120000;
 	char _inChar;
 };
 #endif

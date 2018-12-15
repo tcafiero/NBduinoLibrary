@@ -24,6 +24,16 @@ NBduino::NBduino(const String mqttServer, const int mqttPort, const String mqttU
     _mqttPort=mqttPort;
     _mqttUser=mqttUser;
     _mqttPassword=mqttPassword;
+	_TimeToConn=120000;
+}
+
+NBduino::NBduino(const String mqttServer, const int mqttPort, const String mqttUser, const String mqttPassword, unsigned long TimeToConn)
+{
+    _mqttServer=mqttServer;
+    _mqttPort=mqttPort;
+    _mqttUser=mqttUser;
+    _mqttPassword=mqttPassword;
+	_TimeToConn=TimeToConn;
 }
 
 NBduino::setAPN(String APN)

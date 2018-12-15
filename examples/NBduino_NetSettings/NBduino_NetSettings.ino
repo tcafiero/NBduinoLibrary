@@ -13,7 +13,7 @@
 
 // Network settings 
 const char* APN = "ep.inetd.gdsp"; //(Vodafone)
-NBduino NBiot();
+NBduino NBiot;
 
 
 void setup() {
