@@ -14,12 +14,12 @@
 
 static SoftwareSerial mySerial(10, 11); //RX, TX
 
-NBduino::NBduino(const String mqttServerP, const int mqttPortP, const String mqttUserP, const String mqttPasswordP)
+NBduino::NBduino(const String mqttServer, const int mqttPort, const String mqttUser, const String mqttPassword)
 {
-    _mqttServer=mqttServerP;
-    _mqttPort=mqttPortP;
-    _mqttUser=mqttUserP;
-    _mqttPassword=mqttPasswordP;
+    _mqttServer=mqttServer;
+    _mqttPort=mqttPort;
+    _mqttUser=mqttUser;
+    _mqttPassword=mqttPassword;
 }
 
 bool NBduino::begin()
