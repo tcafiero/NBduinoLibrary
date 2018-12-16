@@ -1,0 +1,41 @@
+\begin{theindex}
+
+  \item {begin}
+    \subitem {N\+Bduino}, \hyperpage{7}
+
+  \indexspace
+
+  \item {N\+Bduino}, \hyperpage{5}
+    \subitem {begin}, \hyperpage{7}
+    \subitem {N\+Bduino}, \hyperpage{5, 6}
+    \subitem {publish}, \hyperpage{7}
+    \subitem {req\+I\+M\+EI}, \hyperpage{8}
+    \subitem {set\+A\+PN}, \hyperpage{8}
+    \subitem {sleep}, \hyperpage{8}
+    \subitem {wakeup}, \hyperpage{9}
+
+  \indexspace
+
+  \item {publish}
+    \subitem {N\+Bduino}, \hyperpage{7}
+
+  \indexspace
+
+  \item {req\+I\+M\+EI}
+    \subitem {N\+Bduino}, \hyperpage{8}
+
+  \indexspace
+
+  \item {set\+A\+PN}
+    \subitem {N\+Bduino}, \hyperpage{8}
+  \item {sleep}
+    \subitem {N\+Bduino}, \hyperpage{8}
+  \item {src/\+N\+Bduino\+Library.\+cpp}, \hyperpage{11}
+  \item {src/\+N\+Bduino\+Library.\+h}, \hyperpage{11}
+
+  \indexspace
+
+  \item {wakeup}
+    \subitem {N\+Bduino}, \hyperpage{9}
+
+\end{theindex}

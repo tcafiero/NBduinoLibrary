@@ -1,0 +1,9 @@
+digraph "NBduino::setAPN"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node13 [label="NBduino::setAPN",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node13 -> Node14 [color="midnightblue",fontsize="10",style="solid"];
+  Node14 [label="NBduino::wakeup",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_n_bduino.html#a8e740e7b90e6e75b7dd3b7900ee0dd22"];
+}

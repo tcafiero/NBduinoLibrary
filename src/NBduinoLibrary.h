@@ -1,13 +1,13 @@
-/*
-  NBduinoLibrary
-  
-  
-  Arduino SHIELD: NBduino
-  Arduino BOARD: ARDUINO UNO Rev3 (or similar)
-
-  Author: Antonio Cafiero
-  Date: 14/12/2018
+/**
+*	@file NBduinoLibrary.h
+*	@brief contains the NBduino class definition and the include file that the class implementation
+*	needs.
+*
+*	@author	Antonio Cafiero
+*
+*	@date 14/12/2018
 */
+
 
 #ifndef NBDUINOLIBRARY_H
 #define NBDUINOLIBRARY_H
@@ -19,7 +19,7 @@ class NBduino
   public:
 	NBduino();
 	NBduino(const String mqttServer, const int mqttPort, const String mqttUser, const String mqttPassword);
-	NBduino(const String mqttServer, const int mqttPort, const String mqttUser, const String mqttPassword, unsigned long TimeToConn);
+	NBduino(const String mqttServer, const int mqttPort, const String mqttUser, const String mqttPassword, unsigned long timeToConn);
 	setAPN(String APN);
 	bool begin();
 	wakeup();
@@ -35,7 +35,7 @@ class NBduino
 	String _mqttUser;
 	String _mqttPassword;
 	unsigned long _lastTime;
-	unsigned long _TimeToConn=120000;
+	unsigned long _timeToConn=120000;
 	char _inChar;
 };
 #endif

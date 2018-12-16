@@ -1,41 +1,71 @@
-/*
-  NBduinoLibrary
-  
-  
-  Arduino SHIELD: NBduino
-  Arduino BOARD: ARDUINO UNO Rev3 (or similar)
-
-  Author: Antonio Cafiero
-  Date: 14/12/2018
+/**
+*	@file NBduinoLibrary.cpp
+*	@brief contains the NBduino class mathods implementation. This class can be used to ease
+*	the programming of an Arduino sketch using the TopView NBduino shield. 
+*
+*	@author	Antonio Cafiero
+*
+*	@date 14/12/2018
 */
+
 
 #include <arduino.h>
 #include <NBduinoLibrary.h>
 
 static SoftwareSerial mySerial(10, 11); //RX, TX
 
+/**
+*	This method is the constructor of the NBduuino
+*	@author	Antonio Cafiero
+*	@date 14/12/2018
+*/
 NBduino::NBduino()
 {
 }
 
+/**
+*	This method is the constructor of the NBduuino
+*	@author	Antonio Cafiero
+*	@param mqttServer The name or the IP address of the MQTT broker (String)
+*	@param mqttPort The port number of the MQTT broker (Int)
+*	@param mqttUser The username enabeled to access the MQTT broker (String)
+*	@param mqttPassword The password to autenticate the userto access the MQTT broker (String)
+*	@date 14/12/2018
+*/
 NBduino::NBduino(const String mqttServer, const int mqttPort, const String mqttUser, const String mqttPassword)
 {
     _mqttServer=mqttServer;
     _mqttPort=mqttPort;
     _mqttUser=mqttUser;
     _mqttPassword=mqttPassword;
-	_TimeToConn=120000;
+	_timeToConn=120000;
 }
 
-NBduino::NBduino(const String mqttServer, const int mqttPort, const String mqttUser, const String mqttPassword, unsigned long TimeToConn)
+/**
+*	This method is the constructor of the NBduuino
+*	@author	Antonio Cafiero
+*	@param mqttServer The name or the IP address of the MQTT broker (String)
+*	@param mqttPort The port number of the MQTT broker (Int)
+*	@param mqttUser The username enabeled to access the MQTT broker (String)
+*	@param mqttPassword The password to autenticate the userto access the MQTT broker (String)
+*	@param timeToConn The timeout in ms in connection phase (unsigned long)
+*	@date 14/12/2018
+*/
+NBduino::NBduino(const String mqttServer, const int mqttPort, const String mqttUser, const String mqttPassword, unsigned long timeToConn)
 {
     _mqttServer=mqttServer;
     _mqttPort=mqttPort;
     _mqttUser=mqttUser;
     _mqttPassword=mqttPassword;
-	_TimeToConn=TimeToConn;
+	_timeToConn=timeToConn;
 }
 
+/**
+*	This method set the APN
+*	@author	Antonio Cafiero
+*	@param APN The name or the APN (String)
+*	@date 14/12/2018
+*/
 NBduino::setAPN(String APN)
 {
   wakeup();
@@ -73,6 +103,11 @@ NBduino::setAPN(String APN)
   mySerial.println("AT+COPS=?");	
 }
 
+/**
+*	This method must be called at beginning before any publish, subscribe, wakeup and sleep call.
+*	@author	Antonio Cafiero
+*	@date 14/12/2018
+*/
 bool NBduino::begin()
 {
     wakeup();
@@ -90,7 +125,7 @@ bool NBduino::begin()
     _lastTime = millis();
     while (1)
     {
-        if (millis() - _lastTime < _TimeToConn) {
+        if (millis() - _lastTime < _timeToConn) {
             // get incoming byte:
             _inChar = mySerial.read();
             if ( _inChar == '+') {
@@ -101,6 +136,11 @@ bool NBduino::begin()
     }
 }
 
+/**
+*	This method wakeup the NBduino shield.
+*	@author	Antonio Cafiero
+*	@date 14/12/2018
+*/
 NBduino::wakeup()
 {
     digitalWrite(_reset, LOW);
@@ -109,6 +149,11 @@ NBduino::wakeup()
     digitalWrite(_pwrkey, LOW);
 }
 
+/**
+*	This method asleep the NBduino shield.
+*	@author	Antonio Cafiero
+*	@date 14/12/2018
+*/
 NBduino::sleep()
 {
     digitalWrite(_pwrkey, HIGH);
@@ -116,6 +161,13 @@ NBduino::sleep()
     digitalWrite(_pwrkey, LOW);
 }
 
+/**
+*	This method publish a string to the MQTT broker.
+*	@author	Antonio Cafiero
+*	@param topic The topic name for publishing (String)
+*	@param value The string to publish (String)
+*	@date 14/12/2018
+*/
 NBduino::publish(const String topic, const String value)
 {
     char outword[200];
@@ -162,6 +214,11 @@ NBduino::publish(const String topic, const String value)
     digitalWrite(_led, LOW);    //LED OFF
 }
 
+/**
+*	This method return the NBduno IMEI string (String).
+*	@author	Antonio Cafiero
+*	@date 14/12/2018
+*/
 String NBduino::reqIMEI()
 {
     char aMessage[200];
