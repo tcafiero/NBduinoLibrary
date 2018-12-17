@@ -1,0 +1,59 @@
+\hypertarget{_n_bduino__m_q_t_t__h_e_l_l_o__w_o_r_l_d_8ino-example}{}\section{N\+Bduino\+\_\+\+M\+Q\+T\+T\+\_\+\+H\+E\+L\+L\+O\+\_\+\+W\+O\+R\+L\+D.\+ino}
+Usage\+: This method is the constructor of the N\+Bduuino \begin{DoxyAuthor}{Author}
+Antonio Cafiero 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Parameters}
+{\em mqtt\+Server} & The name or the IP address of the M\+Q\+TT broker (String) \\
+\hline
+{\em mqtt\+Port} & The port number of the M\+Q\+TT broker (Int) \\
+\hline
+{\em mqtt\+User} & The username enabeled to access the M\+Q\+TT broker (String) \\
+\hline
+{\em mqtt\+Password} & The password to autenticate the userto access the M\+Q\+TT broker (String) \\
+\hline
+{\em time\+To\+Conn} & The timeout in ms in connection phase (unsigned long) 
+\begin{DoxyCode}
+\mbox{\hyperlink{class_n_bduino}{NBduino}} NBiot(\textcolor{stringliteral}{"54.76.137.235"}, 18224, \textcolor{stringliteral}{"test"}, \textcolor{stringliteral}{"test"}, 60000);
+\end{DoxyCode}
+\\
+\hline
+\end{DoxyParams}
+\begin{DoxyDate}{Date}
+14/12/2018
+\end{DoxyDate}
+
+\begin{DoxyCodeInclude}
+/**
+*   @file NBduino\_MQTT\_HELLO\_WORLD.ino
+*   @brief Plug your NBduino SHIELD on the Arduino board,run this sketch, after loading is complete open
+*   the IDE serial monitor publish, over MQTT protocol, "Hello World!" 
+*   as "payload" and the SHIELD's IMEI as "Topic"
+*
+*   @author Antonio Cafiero
+*
+*   @date 14/12/2018
+*/
+
+
+#include <NBduinoLibrary.h>
+
+NBduino NBiot("54.76.137.235", 18224, "test", "test");
+String Topic;
+
+void setup() \{
+  Serial.begin(115200);
+  while (!Serial);
+  Serial.println("Let's start!");
+  delay(300);
+  NBiot.begin();
+  Topic = NBiot.reqIMEI();
+\}
+
+void loop()
+\{
+  NBiot.publish(Topic, "Hello World");
+  delay(1000);
+\}
+\end{DoxyCodeInclude}
+ 

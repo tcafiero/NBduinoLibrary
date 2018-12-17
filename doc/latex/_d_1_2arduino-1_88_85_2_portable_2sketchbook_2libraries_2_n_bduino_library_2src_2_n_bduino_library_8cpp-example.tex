@@ -1,0 +1,210 @@
+\hypertarget{_d_1_2arduino-1_88_85_2_portable_2sketchbook_2libraries_2_n_bduino_library_2src_2_n_bduino_library_8cpp-example}{}\section{D\+:/arduino-\/1.\+8.\+5/\+Portable/sketchbook/libraries/\+N\+Bduino\+Library/src/\+N\+Bduino\+Library.\+cpp}
+This method is the constructor of the N\+Bduuino \begin{DoxyAuthor}{Author}
+Antonio Cafiero 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Parameters}
+{\em mqtt\+Server} & The name or the IP address of the M\+Q\+TT broker (String) \\
+\hline
+{\em mqtt\+Port} & The port number of the M\+Q\+TT broker (Int) \\
+\hline
+{\em mqtt\+User} & The username enabeled to access the M\+Q\+TT broker (String) \\
+\hline
+{\em mqtt\+Password} & The password to autenticate the userto access the M\+Q\+TT broker (String) \\
+\hline
+{\em time\+To\+Conn} & The timeout in ms in connection phase (unsigned long)\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+\mbox{\hyperlink{class_n_bduino}{NBduino}} NBiot(\textcolor{stringliteral}{"54.76.137.235"}, 18224, \textcolor{stringliteral}{"test"}, \textcolor{stringliteral}{"test"},60000);
+\end{DoxyCode}
+ \begin{DoxyDate}{Date}
+14/12/2018
+\end{DoxyDate}
+
+\begin{DoxyCodeInclude}
+
+\textcolor{preprocessor}{#include <arduino.h>}
+\textcolor{preprocessor}{#include <\mbox{\hyperlink{_n_bduino_library_8h}{NBduinoLibrary.h}}>}
+
+\textcolor{keyword}{static} SoftwareSerial mySerial(10, 11); \textcolor{comment}{//RX, TX}
+
+\mbox{\hyperlink{class_n_bduino_acd7c1c69bffccefc807ff89394732a7d}{NBduino::NBduino}}()
+\{
+\}
+
+\mbox{\hyperlink{class_n_bduino_acd7c1c69bffccefc807ff89394732a7d}{NBduino::NBduino}}(\textcolor{keyword}{const} String mqttServer, \textcolor{keyword}{const} \textcolor{keywordtype}{int} mqttPort, \textcolor{keyword}{const} String mqttUser, \textcolor{keyword}{const} 
+      String mqttPassword)
+\{
+    \_mqttServer=mqttServer;
+    \_mqttPort=mqttPort;
+    \_mqttUser=mqttUser;
+    \_mqttPassword=mqttPassword;
+    \_timeToConn=120000;
+\}
+
+\mbox{\hyperlink{class_n_bduino_acd7c1c69bffccefc807ff89394732a7d}{NBduino::NBduino}}(\textcolor{keyword}{const} String mqttServer, \textcolor{keyword}{const} \textcolor{keywordtype}{int} mqttPort, \textcolor{keyword}{const} String mqttUser, \textcolor{keyword}{const} 
+      String mqttPassword, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} timeToConn)
+\{
+    \_mqttServer=mqttServer;
+    \_mqttPort=mqttPort;
+    \_mqttUser=mqttUser;
+    \_mqttPassword=mqttPassword;
+    \_timeToConn=timeToConn;
+\}
+
+\mbox{\hyperlink{class_n_bduino_a9a903295305e847b3d68a7a6cc111316}{NBduino::setAPN}}(String APN)
+\{
+  \mbox{\hyperlink{class_n_bduino_a8e740e7b90e6e75b7dd3b7900ee0dd22}{wakeup}}();
+  mySerial.begin(115200);
+  delay(1000);
+  mySerial.println(\textcolor{stringliteral}{"AT+IPR=4800"});
+  delay (500);
+  mySerial.end();
+  mySerial.begin(4800);
+  delay(500);
+  mySerial.print(\textcolor{stringliteral}{"AT*MCGDEFCONT="});
+  mySerial.print(\textcolor{stringliteral}{"\(\backslash\)""});
+  mySerial.print(\textcolor{stringliteral}{"IP"});
+  mySerial.print(\textcolor{stringliteral}{"\(\backslash\)""});
+  mySerial.print(\textcolor{stringliteral}{","});
+  mySerial.print(\textcolor{stringliteral}{"\(\backslash\)""});
+  mySerial.print(APN);
+  mySerial.println(\textcolor{stringliteral}{"\(\backslash\)""});
+  delay(500);
+  mySerial.print(\textcolor{stringliteral}{"AT+CGDCONT=1,"});
+  mySerial.print(\textcolor{stringliteral}{"\(\backslash\)""});
+  mySerial.print(\textcolor{stringliteral}{"IP"});
+  mySerial.print(\textcolor{stringliteral}{"\(\backslash\)""});
+  mySerial.print(\textcolor{stringliteral}{","});
+  mySerial.print(\textcolor{stringliteral}{"\(\backslash\)""});
+  mySerial.print(APN);
+  mySerial.print(\textcolor{stringliteral}{"\(\backslash\)""});
+  mySerial.print(\textcolor{stringliteral}{","});
+  mySerial.print(\textcolor{stringliteral}{"\(\backslash\)""});
+  mySerial.print(\textcolor{stringliteral}{"\(\backslash\)""});
+  mySerial.println(\textcolor{stringliteral}{",0,0,0,,,,,,0,,0"});
+  delay(500);
+  mySerial.println(\textcolor{stringliteral}{"AT+CEREG=5"});
+  delay(500);
+  mySerial.println(\textcolor{stringliteral}{"AT+COPS=?"});    
+\}
+
+\textcolor{keywordtype}{bool} \mbox{\hyperlink{class_n_bduino_ae8241f6dcfe492f00f8bef4b5d4b79a0}{NBduino::begin}}()
+\{
+    \mbox{\hyperlink{class_n_bduino_a8e740e7b90e6e75b7dd3b7900ee0dd22}{wakeup}}();
+    mySerial.begin(115200);
+    delay(1000);
+    mySerial.println(\textcolor{stringliteral}{"AT+IPR=4800"});
+    delay (500);
+    mySerial.end();
+    mySerial.begin(4800);
+    delay (500);
+    mySerial.println(\textcolor{stringliteral}{"ATE0"});
+    mySerial.println(\textcolor{stringliteral}{"AT+CEREG=5"}); \textcolor{comment}{//restituisce i parametri della cella LTE}
+    delay (1500);
+    mySerial.flush();
+    \_lastTime = millis();
+    \textcolor{keywordflow}{while} (1)
+    \{
+        \textcolor{keywordflow}{if} (millis() - \_lastTime < \_timeToConn) \{
+            \textcolor{comment}{// get incoming byte:}
+            \_inChar = mySerial.read();
+            \textcolor{keywordflow}{if} ( \_inChar == \textcolor{charliteral}{'+'}) \{
+                \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+            \}
+        \}
+        \textcolor{keywordflow}{else} \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+    \}
+\}
+
+\mbox{\hyperlink{class_n_bduino_a8e740e7b90e6e75b7dd3b7900ee0dd22}{NBduino::wakeup}}()
+\{
+    digitalWrite(\_reset, LOW);
+    digitalWrite(\_pwrkey, HIGH);
+    delay(2000);
+    digitalWrite(\_pwrkey, LOW);
+\}
+
+\mbox{\hyperlink{class_n_bduino_ac7bf8f7f0552ad2cbda4b3e91a82bfca}{NBduino::sleep}}()
+\{
+    digitalWrite(\_pwrkey, HIGH);
+    delay(2000);
+    digitalWrite(\_pwrkey, LOW);
+\}
+
+\mbox{\hyperlink{class_n_bduino_a1c9526fbb36956b1cd41e33dd9133394}{NBduino::publish}}(\textcolor{keyword}{const} String topic, \textcolor{keyword}{const} String value)
+\{
+    \textcolor{keywordtype}{char} outword[200];
+    String s=value;
+    \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} len, i;
+    len = value.length();
+    \textcolor{keywordflow}{if}(value[len-1]==\textcolor{charliteral}{'\(\backslash\)n'})
+        s[--len] = \textcolor{charliteral}{'\(\backslash\)0'};
+
+    \textcolor{keywordflow}{for}(i = 0; i<len; i++) \{
+        sprintf(outword+i*2, \textcolor{stringliteral}{"%02X"}, s[i]);
+    \}
+    digitalWrite( \_led, HIGH );
+    delay(2000);
+    mySerial.print(\textcolor{stringliteral}{"AT+CMQNEW=\(\backslash\)""});
+    mySerial.print(\_mqttServer);
+    mySerial.print(\textcolor{stringliteral}{"\(\backslash\)","}\textcolor{stringliteral}{"\(\backslash\)""});
+    mySerial.print(\_mqttPort);
+    mySerial.println(\textcolor{stringliteral}{"\(\backslash\)",2400,100"});
+    delay(2000);
+    mySerial.print(\textcolor{stringliteral}{"AT+CMQCON=0,3,"});
+    mySerial.print(\textcolor{stringliteral}{"\(\backslash\)""});
+    mySerial.print(topic);
+    mySerial.print(\textcolor{stringliteral}{"\(\backslash\)""});
+    mySerial.print(\textcolor{stringliteral}{",1200,0,0,"});
+    mySerial.print(\textcolor{stringliteral}{"\(\backslash\)""}\textcolor{stringliteral}{""});
+    mySerial.print(\_mqttUser);
+    mySerial.print(\textcolor{stringliteral}{"\(\backslash\)","}\textcolor{stringliteral}{"\(\backslash\)""});
+    mySerial.print(\_mqttPassword);
+    mySerial.println(\textcolor{stringliteral}{"\(\backslash\)""});
+    delay(2000);
+    mySerial.print(\textcolor{stringliteral}{"AT+CMQPUB=0,\(\backslash\)""});
+    mySerial.print(\textcolor{stringliteral}{"NBduino/"});
+    mySerial.print(topic);
+    mySerial.print(\textcolor{stringliteral}{"\(\backslash\)",1,0,0,"});
+    mySerial.print(value.length());
+    mySerial.print(\textcolor{stringliteral}{","});
+    mySerial.print(\textcolor{stringliteral}{"\(\backslash\)""});
+    mySerial.print(outword);
+    mySerial.println(\textcolor{stringliteral}{"\(\backslash\)""});
+    delay(2000);
+    mySerial.println(\textcolor{stringliteral}{"AT+CMQDISCON=0"});
+    delay(2000);
+    digitalWrite(\_led, LOW);    \textcolor{comment}{//LED OFF}
+\}
+
+String \mbox{\hyperlink{class_n_bduino_a3d96fbfb52c89cd55e9a7a3f387c6945}{NBduino::reqIMEI}}()
+\{
+    \textcolor{keywordtype}{char} aMessage[200];
+    \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} messageSize;
+    \textcolor{keywordtype}{char} cha;
+    mySerial.println(\textcolor{stringliteral}{"AT+GSN"});
+    mySerial.flush();
+    \textcolor{keywordflow}{if} (mySerial.available()) \{
+        \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} c = 0; c <= 99; c++) aMessage[c] = 0;    \textcolor{comment}{// clear aMessage in prep for new message}
+        messageSize = 0;                                  \textcolor{comment}{// set message size to zero}
+
+        \textcolor{keywordflow}{while} (mySerial.available()) \{            \textcolor{comment}{// loop through while data is available}
+            cha = mySerial.read();                  \textcolor{comment}{// get character}
+            aMessage[messageSize] = cha;            \textcolor{comment}{// append to aMessage}
+            messageSize++;                          \textcolor{comment}{// bump message size}
+            delay(20);                              \textcolor{comment}{// just to slow the reads down a bit}
+        \} \textcolor{comment}{// while}
+
+        aMessage[messageSize] = \textcolor{charliteral}{'\(\backslash\)0'};             \textcolor{comment}{// set last character to a null}
+
+        String exString = aMessage;
+        exString.remove(0, 2);
+        exString.remove(15);
+        \textcolor{keywordflow}{return} exString;
+    \}
+\}
+\end{DoxyCodeInclude}
+ 

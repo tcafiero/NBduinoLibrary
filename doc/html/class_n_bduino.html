@@ -109,10 +109,10 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>This method is the constructor of the NBduuino </p><dl class="section author"><dt>Author</dt><dd>Antonio Cafiero </dd></dl>
+<p>This method is a constructor for the <a class="el" href="class_n_bduino.html">NBduino</a> class </p><div class="fragment"><div class="line">Usage example:</div><div class="line">    <a class="code" href="class_n_bduino.html">NBduino</a> NBiot();</div></div><!-- fragment --> <dl class="section author"><dt>Author</dt><dd>Antonio Cafiero </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>14/12/2018 </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_n_bduino_library_8cpp_source.html#l00022">22</a> of file <a class="el" href="_n_bduino_library_8cpp_source.html">NBduinoLibrary.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_n_bduino_library_8cpp_source.html#l00027">27</a> of file <a class="el" href="_n_bduino_library_8cpp_source.html">NBduinoLibrary.cpp</a>.</p>
 
 </div>
 </div>
@@ -153,19 +153,19 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>This method is the constructor of the NBduuino </p><dl class="section author"><dt>Author</dt><dd>Antonio Cafiero </dd></dl>
-<dl class="params"><dt>Parameters</dt><dd>
+<p>This method is a constructor for the <a class="el" href="class_n_bduino.html">NBduino</a> class </p><div class="fragment"><div class="line">Usage example:</div><div class="line">    <a class="code" href="class_n_bduino.html">NBduino</a> NBiot(<span class="stringliteral">&quot;54.76.137.235&quot;</span>, 18224, <span class="stringliteral">&quot;test&quot;</span>, <span class="stringliteral">&quot;test&quot;</span>);</div></div><!-- fragment --> <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">mqttServer</td><td>The name or the IP address of the MQTT broker (String) </td></tr>
     <tr><td class="paramname">mqttPort</td><td>The port number of the MQTT broker (Int) </td></tr>
     <tr><td class="paramname">mqttUser</td><td>The username enabeled to access the MQTT broker (String) </td></tr>
-    <tr><td class="paramname">mqttPassword</td><td>The password to autenticate the userto access the MQTT broker (String) </td></tr>
+    <tr><td class="paramname">mqttPassword</td><td>The password to autenticate the userto access the MQTT broker (String). </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section author"><dt>Author</dt><dd>Antonio Cafiero </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>14/12/2018 </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_n_bduino_library_8cpp_source.html#l00035">35</a> of file <a class="el" href="_n_bduino_library_8cpp_source.html">NBduinoLibrary.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_n_bduino_library_8cpp_source.html#l00045">45</a> of file <a class="el" href="_n_bduino_library_8cpp_source.html">NBduinoLibrary.cpp</a>.</p>
 
 </div>
 </div>
@@ -212,8 +212,7 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>This method is the constructor of the NBduuino </p><dl class="section author"><dt>Author</dt><dd>Antonio Cafiero </dd></dl>
-<dl class="params"><dt>Parameters</dt><dd>
+<p>This method is a constructor for the <a class="el" href="class_n_bduino.html">NBduino</a> class </p><div class="fragment"><div class="line">Usage example:</div><div class="line">    <a class="code" href="class_n_bduino.html">NBduino</a> NBiot(<span class="stringliteral">&quot;54.76.137.235&quot;</span>, 18224, <span class="stringliteral">&quot;test&quot;</span>, <span class="stringliteral">&quot;test&quot;</span>, 60000);</div></div><!-- fragment --> <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">mqttServer</td><td>The name or the IP address of the MQTT broker (String) </td></tr>
     <tr><td class="paramname">mqttPort</td><td>The port number of the MQTT broker (Int) </td></tr>
@@ -223,9 +222,10 @@ Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section author"><dt>Author</dt><dd>Antonio Cafiero </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>14/12/2018 </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_n_bduino_library_8cpp_source.html#l00054">54</a> of file <a class="el" href="_n_bduino_library_8cpp_source.html">NBduinoLibrary.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_n_bduino_library_8cpp_source.html#l00069">69</a> of file <a class="el" href="_n_bduino_library_8cpp_source.html">NBduinoLibrary.cpp</a>.</p>
 
 </div>
 </div>
@@ -244,10 +244,11 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>This method must be called at beginning before any publish, subscribe, wakeup and sleep call. </p><dl class="section author"><dt>Author</dt><dd>Antonio Cafiero </dd></dl>
+<p>This method must be called at beginning before any publish, subscribe, wakeup and sleep call. </p><div class="fragment"><div class="line">Usage example:</div><div class="line">    <span class="keywordtype">bool</span> status</div><div class="line">    status=NBiot.begin();</div></div><!-- fragment --> <dl class="section return"><dt>Returns</dt><dd>true if <a class="el" href="class_n_bduino.html">NBduino</a> correctly initiated - false othewise </dd></dl>
+<dl class="section author"><dt>Author</dt><dd>Antonio Cafiero </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>14/12/2018 </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_n_bduino_library_8cpp_source.html#l00111">111</a> of file <a class="el" href="_n_bduino_library_8cpp_source.html">NBduinoLibrary.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_n_bduino_library_8cpp_source.html#l00138">138</a> of file <a class="el" href="_n_bduino_library_8cpp_source.html">NBduinoLibrary.cpp</a>.</p>
 
 </div>
 </div>
@@ -276,17 +277,17 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>This method publish a string to the MQTT broker. </p><dl class="section author"><dt>Author</dt><dd>Antonio Cafiero </dd></dl>
-<dl class="params"><dt>Parameters</dt><dd>
+<p>This method publish a string to the MQTT broker. </p><div class="fragment"><div class="line">Usage example:</div><div class="line">    NBiot.publish(<span class="stringliteral">&quot;topic001&quot;</span>, <span class="stringliteral">&quot;Hello World!&quot;</span>);</div></div><!-- fragment --> <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">topic</td><td>The topic name for publishing (String) </td></tr>
     <tr><td class="paramname">value</td><td>The string to publish (String) </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section author"><dt>Author</dt><dd>Antonio Cafiero </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>14/12/2018 </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_n_bduino_library_8cpp_source.html#l00171">171</a> of file <a class="el" href="_n_bduino_library_8cpp_source.html">NBduinoLibrary.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_n_bduino_library_8cpp_source.html#l00213">213</a> of file <a class="el" href="_n_bduino_library_8cpp_source.html">NBduinoLibrary.cpp</a>.</p>
 
 </div>
 </div>
@@ -304,10 +305,11 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>This method return the NBduno IMEI string (String). </p><dl class="section author"><dt>Author</dt><dd>Antonio Cafiero </dd></dl>
+<p>This method return the NBduno IMEI string (String). </p><div class="fragment"><div class="line">Usage example:</div><div class="line">    String IMEI</div><div class="line">    IMEI=NBiot.reqIMEI();</div></div><!-- fragment --> <dl class="section return"><dt>Returns</dt><dd>The string contains IMEI </dd></dl>
+<dl class="section author"><dt>Author</dt><dd>Antonio Cafiero </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>14/12/2018 </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_n_bduino_library_8cpp_source.html#l00222">222</a> of file <a class="el" href="_n_bduino_library_8cpp_source.html">NBduinoLibrary.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_n_bduino_library_8cpp_source.html#l00271">271</a> of file <a class="el" href="_n_bduino_library_8cpp_source.html">NBduinoLibrary.cpp</a>.</p>
 
 </div>
 </div>
@@ -326,16 +328,16 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>This method set the APN </p><dl class="section author"><dt>Author</dt><dd>Antonio Cafiero </dd></dl>
-<dl class="params"><dt>Parameters</dt><dd>
+<p>This method set the APN </p><div class="fragment"><div class="line">Usage example:</div><div class="line">    NBiot.setAPN(<span class="stringliteral">&quot;broker.iothingsware.com&quot;</span>);</div></div><!-- fragment --> <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">APN</td><td>The name or the APN (String) </td></tr>
+    <tr><td class="paramname">APN</td><td>The name of the APN (String) </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section author"><dt>Author</dt><dd>Antonio Cafiero </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>14/12/2018 </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_n_bduino_library_8cpp_source.html#l00069">69</a> of file <a class="el" href="_n_bduino_library_8cpp_source.html">NBduinoLibrary.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_n_bduino_library_8cpp_source.html#l00089">89</a> of file <a class="el" href="_n_bduino_library_8cpp_source.html">NBduinoLibrary.cpp</a>.</p>
 
 </div>
 </div>
@@ -353,10 +355,10 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>This method asleep the <a class="el" href="class_n_bduino.html">NBduino</a> shield. </p><dl class="section author"><dt>Author</dt><dd>Antonio Cafiero </dd></dl>
+<p>This method asleep the <a class="el" href="class_n_bduino.html">NBduino</a> shield. </p><div class="fragment"><div class="line">Usage example:</div><div class="line">    NBiot.sleep();</div></div><!-- fragment --> <dl class="section author"><dt>Author</dt><dd>Antonio Cafiero </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>14/12/2018 </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_n_bduino_library_8cpp_source.html#l00157">157</a> of file <a class="el" href="_n_bduino_library_8cpp_source.html">NBduinoLibrary.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_n_bduino_library_8cpp_source.html#l00194">194</a> of file <a class="el" href="_n_bduino_library_8cpp_source.html">NBduinoLibrary.cpp</a>.</p>
 
 </div>
 </div>
@@ -374,16 +376,16 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>This method wakeup the <a class="el" href="class_n_bduino.html">NBduino</a> shield. </p><dl class="section author"><dt>Author</dt><dd>Antonio Cafiero </dd></dl>
+<p>This method wakeup the <a class="el" href="class_n_bduino.html">NBduino</a> shield. </p><div class="fragment"><div class="line">Usage example:</div><div class="line">    NBiot.wakeup();</div></div><!-- fragment --> <dl class="section author"><dt>Author</dt><dd>Antonio Cafiero </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>14/12/2018 </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_n_bduino_library_8cpp_source.html#l00144">144</a> of file <a class="el" href="_n_bduino_library_8cpp_source.html">NBduinoLibrary.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_n_bduino_library_8cpp_source.html#l00176">176</a> of file <a class="el" href="_n_bduino_library_8cpp_source.html">NBduinoLibrary.cpp</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>src/<a class="el" href="_n_bduino_library_8h_source.html">NBduinoLibrary.h</a></li>
-<li>src/<a class="el" href="_n_bduino_library_8cpp_source.html">NBduinoLibrary.cpp</a></li>
+<li>D:/arduino-1.8.5/Portable/sketchbook/libraries/NBduinoLibrary/src/<a class="el" href="_n_bduino_library_8h_source.html">NBduinoLibrary.h</a></li>
+<li>D:/arduino-1.8.5/Portable/sketchbook/libraries/NBduinoLibrary/src/<a class="el" href="_n_bduino_library_8cpp_source.html">NBduinoLibrary.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

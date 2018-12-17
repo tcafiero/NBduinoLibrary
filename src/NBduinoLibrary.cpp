@@ -15,7 +15,12 @@
 static SoftwareSerial mySerial(10, 11); //RX, TX
 
 /**
-*	This method is the constructor of the NBduuino
+*	This method is a constructor for the NBduino class
+*	@code
+*
+*	Usage example:
+*		NBduino NBiot();
+*	@endcode
 *	@author	Antonio Cafiero
 *	@date 14/12/2018
 */
@@ -24,12 +29,17 @@ NBduino::NBduino()
 }
 
 /**
-*	This method is the constructor of the NBduuino
-*	@author	Antonio Cafiero
+*	This method is a constructor for the NBduino class
+*	@code
+*
+*	Usage example:
+*		NBduino NBiot("54.76.137.235", 18224, "test", "test");
+*	@endcode
 *	@param mqttServer The name or the IP address of the MQTT broker (String)
 *	@param mqttPort The port number of the MQTT broker (Int)
 *	@param mqttUser The username enabeled to access the MQTT broker (String)
-*	@param mqttPassword The password to autenticate the userto access the MQTT broker (String)
+*	@param mqttPassword The password to autenticate the userto access the MQTT broker (String).
+*	@author	Antonio Cafiero
 *	@date 14/12/2018
 */
 NBduino::NBduino(const String mqttServer, const int mqttPort, const String mqttUser, const String mqttPassword)
@@ -42,13 +52,18 @@ NBduino::NBduino(const String mqttServer, const int mqttPort, const String mqttU
 }
 
 /**
-*	This method is the constructor of the NBduuino
-*	@author	Antonio Cafiero
+*	This method is a constructor for the NBduino class
+*	@code
+*
+*	Usage example:
+*		NBduino NBiot("54.76.137.235", 18224, "test", "test", 60000);
+*	@endcode
 *	@param mqttServer The name or the IP address of the MQTT broker (String)
 *	@param mqttPort The port number of the MQTT broker (Int)
 *	@param mqttUser The username enabeled to access the MQTT broker (String)
 *	@param mqttPassword The password to autenticate the userto access the MQTT broker (String)
 *	@param timeToConn The timeout in ms in connection phase (unsigned long)
+*	@author	Antonio Cafiero
 *	@date 14/12/2018
 */
 NBduino::NBduino(const String mqttServer, const int mqttPort, const String mqttUser, const String mqttPassword, unsigned long timeToConn)
@@ -62,8 +77,13 @@ NBduino::NBduino(const String mqttServer, const int mqttPort, const String mqttU
 
 /**
 *	This method set the APN
+*	@code
+*
+*	Usage example:
+*		NBiot.setAPN("broker.iothingsware.com");
+*	@endcode
+*	@param APN The name of the APN (String)
 *	@author	Antonio Cafiero
-*	@param APN The name or the APN (String)
 *	@date 14/12/2018
 */
 NBduino::setAPN(String APN)
@@ -105,6 +125,13 @@ NBduino::setAPN(String APN)
 
 /**
 *	This method must be called at beginning before any publish, subscribe, wakeup and sleep call.
+*	@code
+*
+*	Usage example:
+*		bool status
+*		status=NBiot.begin();
+*	@endcode
+*	@return true if NBduino correctly initiated - false othewise
 *	@author	Antonio Cafiero
 *	@date 14/12/2018
 */
@@ -138,6 +165,11 @@ bool NBduino::begin()
 
 /**
 *	This method wakeup the NBduino shield.
+*	@code
+*
+*	Usage example:
+*		NBiot.wakeup();
+*	@endcode
 *	@author	Antonio Cafiero
 *	@date 14/12/2018
 */
@@ -151,6 +183,11 @@ NBduino::wakeup()
 
 /**
 *	This method asleep the NBduino shield.
+*	@code
+*
+*	Usage example:
+*		NBiot.sleep();
+*	@endcode
 *	@author	Antonio Cafiero
 *	@date 14/12/2018
 */
@@ -163,9 +200,14 @@ NBduino::sleep()
 
 /**
 *	This method publish a string to the MQTT broker.
-*	@author	Antonio Cafiero
+*	@code
+*
+*	Usage example:
+*		NBiot.publish("topic001", "Hello World!");
+*	@endcode
 *	@param topic The topic name for publishing (String)
 *	@param value The string to publish (String)
+*	@author	Antonio Cafiero
 *	@date 14/12/2018
 */
 NBduino::publish(const String topic, const String value)
@@ -216,6 +258,13 @@ NBduino::publish(const String topic, const String value)
 
 /**
 *	This method return the NBduno IMEI string (String).
+*	@code
+*
+*	Usage example:
+*		String IMEI
+*		IMEI=NBiot.reqIMEI();
+*	@endcode
+*	@return The string contains IMEI
 *	@author	Antonio Cafiero
 *	@date 14/12/2018
 */

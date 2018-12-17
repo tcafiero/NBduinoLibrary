@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/W32TeX) (preloaded format=pdflatex 2018.12.16)  16 DEC 2018 20:37
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/W32TeX) (preloaded format=pdflatex 2018.12.16)  17 DEC 2018 14:44
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -961,70 +961,60 @@ LaTeX Font Warning: Font shape `T1/pcr/bc/n' undefined
 (Font)              using `T1/pcr/m/n' instead on input line 37.
 
 
-Underfull \hbox (badness 10000) detected at line 40
+Underfull \hbox (badness 10000) detected at line 45
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 43
+Underfull \hbox (badness 10000) detected at line 48
 [][][]
  []
 
 LaTeX Font Info:    Font shape `T1/pcr/m/it' in size <8> not available
-(Font)              Font shape `T1/pcr/m/sl' tried instead on input line 54.
+(Font)              Font shape `T1/pcr/m/sl' tried instead on input line 59.
 LaTeX Font Info:    Font shape `T1/pcr/m/it' in size <7> not available
-(Font)              Font shape `T1/pcr/m/sl' tried instead on input line 54.
+(Font)              Font shape `T1/pcr/m/sl' tried instead on input line 59.
 [5]
-Underfull \hbox (badness 10000) detected at line 56
+Underfull \hbox (badness 10000) detected at line 77
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 70
+Underfull \hbox (badness 10000) detected at line 80
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 83
-[][][]
- []
-
-
-Overfull \vbox (4.84299pt too high) has occurred while \output is active []
+Overfull \vbox (45.4208pt too high) has occurred while \output is active []
 
 
 [6]
-Underfull \hbox (badness 10000) detected at line 99
+Underfull \hbox (badness 10000) detected at line 111
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 115
+Underfull \hbox (badness 10000) detected at line 114
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 118
+Underfull \hbox (badness 10000) detected at line 136
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 131
+Underfull \hbox (badness 10000) detected at line 139
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 141
+Underfull \hbox (badness 10000) detected at line 142
 [][][]
  []
 
 [7]
-Underfull \hbox (badness 10000) detected at line 154
-[][][]
- []
-
-
-Underfull \hbox (badness 10000) detected at line 157
+Underfull \hbox (badness 10000) detected at line 167
 [][][]
  []
 
@@ -1034,27 +1024,47 @@ Underfull \hbox (badness 10000) detected at line 170
  []
 
 
-Underfull \hbox (badness 10000) detected at line 178
+Underfull \hbox (badness 10000) detected at line 189
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 192
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 195
 [][][]
  []
 
 [8]
-Underfull \hbox (badness 10000) detected at line 191
+Underfull \hbox (badness 10000) detected at line 218
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 194
+Underfull \hbox (badness 10000) detected at line 221
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 207
+Underfull \hbox (badness 10000) detected at line 239
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 210
+Underfull \hbox (badness 10000) detected at line 242
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 260
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 263
 [][][]
  []
 
@@ -1078,21 +1088,37 @@ Underfull \hbox (badness 10000) detected at line 18
  []
 
 ) (./_n_bduino_library_8h.tex
+Underfull \hbox (badness 10000) in paragraph at lines 1--1
+[]\T1/phv/bc/n/14.4 D[]:/arduino-1.8.5/[]Portable/sketchbook/libraries/[]N[]Bdu
+ino[]Library/src/[]N[]Bduino[]Library.h
+ []
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 8--9
 
  []
 
-
+[11]
 Underfull \hbox (badness 10000) detected at line 19
 [][][]
  []
 
-[11]
+
 Underfull \hbox (badness 10000) detected at line 22
 [][][]
  []
 
-) [12] (./refman.ind [13
+) [12] (./refman.ind
+Underfull \hbox (badness 10000) in paragraph at lines 8--10
+[]\T1/phv/m/n/10 D[]:/arduino-1.[]8.[]5/[]Portable/sketchbook/libraries/[]N[]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 10--12
+[]\T1/phv/m/n/10 D[]:/arduino-1.[]8.[]5/[]Portable/sketchbook/libraries/[]N[]
+ []
+
+[13
 
 
 
@@ -1104,7 +1130,7 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 160.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 160.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 160.
 Package rerunfilecheck Info: File `refman.out' has not changed.
-(rerunfilecheck)             Checksum: 543E87F5030CE14E053682863EF9AD36;4275.
+(rerunfilecheck)             Checksum: 39D2F4B5C3F5346539BCA6DC9C7DD335;4895.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
@@ -1112,24 +1138,26 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 160.
  ) 
 Here is how much of TeX's memory you used:
- 14833 strings out of 492616
- 212083 string characters out of 6132767
- 312372 words of memory out of 5000000
+ 14834 strings out of 492616
+ 212089 string characters out of 6132767
+ 313621 words of memory out of 5000000
  18456 multiletter control sequences out of 15000+600000
- 59076 words of font info for 68 fonts, out of 8000000 for 9000
+ 59375 words of font info for 69 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 53i,16n,92p,755b,587s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 53i,15n,92p,1137b,627s stack positions out of 5000i,500n,10000p,200000b,80000s
 {c:/texlive/2018/texmf-dist/fonts/enc/dvips/base/8r.enc}<c:/texlive/2018/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2018/texmf-dist/fo
-nts/type1/urw/courier/ucrr8a.pfb><c:/texlive/2018/texmf-dist/fonts/type1/urw/co
-urier/ucrro8a.pfb><c:/texlive/2018/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.p
-fb><c:/texlive/2018/texmf-dist/fonts/type1/urw/helvetic/uhvb8ac.pfb><c:/texlive
-/2018/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb><c:/texlive/2018/texmf-dis
-t/fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on refman.pdf (17 pages, 84129 bytes).
+nts/type1/public/amsfonts/cm/cmmi7.pfb><c:/texlive/2018/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmsy7.pfb><c:/texlive/2018/texmf-dist/fonts/type1/urw/courie
+r/ucrr8a.pfb><c:/texlive/2018/texmf-dist/fonts/type1/urw/courier/ucrro8a.pfb><c
+:/texlive/2018/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb><c:/texlive/2018/
+texmf-dist/fonts/type1/urw/helvetic/uhvb8ac.pfb><c:/texlive/2018/texmf-dist/fon
+ts/type1/urw/helvetic/uhvr8a.pfb><c:/texlive/2018/texmf-dist/fonts/type1/urw/he
+lvetic/uhvro8a.pfb>
+Output written on refman.pdf (17 pages, 102319 bytes).
 PDF statistics:
- 305 PDF objects out of 1000 (max. 8388607)
- 276 compressed objects within 3 object streams
+ 320 PDF objects out of 1000 (max. 8388607)
+ 289 compressed objects within 3 object streams
  57 named destinations out of 1000 (max. 500000)
  193 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -1,13 +1,15 @@
-/*
-  Plug your NBduino SHIELD on the Arduino board,run this sketch, after loading is complete open the IDE serial monitor
-  publish, over MQTT protocol, "Hello World!" as "payload" and the SHIELD's IMEI as "Topic"
-
-  Arduino SHIELD: NBduino
-  Arduino BOARD: ARDUINO UNO Rev3 (or similar)
-
-  Author: Antonio Cafiero
-  Date: 14/12/2018
+/**
+*	@file NBduino_MQTT_HELLO_WORLD.ino
+*	@brief Plug your NBduino SHIELD on the Arduino board,run this sketch, after loading is complete open
+*	the IDE serial monitor publish, over MQTT protocol, "Hello World!" 
+*	as "payload" and the SHIELD's IMEI as "Topic"
+*
+*	@author	Antonio Cafiero
+*
+*	@date 14/12/2018
 */
+
+
 #include <NBduinoLibrary.h>
 
 NBduino NBiot("54.76.137.235", 18224, "test", "test");
