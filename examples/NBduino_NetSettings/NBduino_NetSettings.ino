@@ -7,7 +7,7 @@
   Arduino BOARD: ARDUINO UNO Rev3 (or similar)
 
   Author: Antonio Cafiero
-  Date: 14/12/2018
+  Date: 8/3/2019
 */
 #include <NBduinoLibrary.h>
 
@@ -22,7 +22,7 @@ void setup() {
   Serial.println("Let's start!");
   delay(300);
   NBiot.setAPN(APN);
-  Serial.println("WAIT UNTIL THE \"NET\" LED STARTS TO FLASH EVERY 3 SECONDS");
+  Serial.println("WAIT UNTIL THE \"NET\" LED STARTS TO FLASH EVERY 1 SECOND");
   }
 
 void loop() { 

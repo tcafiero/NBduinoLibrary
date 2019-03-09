@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['wakeup',['wakeup',['../class_n_bduino.html#a8e740e7b90e6e75b7dd3b7900ee0dd22',1,'NBduino']]]
+  ['reqimei',['reqIMEI',['../class_n_bduino.html#a3d96fbfb52c89cd55e9a7a3f387c6945',1,'NBduino']]]
 ];

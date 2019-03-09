@@ -18,6 +18,8 @@ sleep		KEYWORD2
 reqIMEI		KEYWORD2
 publish		KEYWORD2
 setAPN		KEYWORD2
+connect		KEYWORD2
+disconnect	KEYWORD2
 
 
 #######################################

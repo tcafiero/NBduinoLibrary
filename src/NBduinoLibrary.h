@@ -26,6 +26,8 @@ class NBduino
 	sleep();
 	String reqIMEI();
 	publish(const String topic, const String value);
+	connect(const String clientname);
+	disconnect();
   private:
 	const int _led=13;
 	const int _reset=7;

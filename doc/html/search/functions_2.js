@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['publish',['publish',['../class_n_bduino.html#a1c9526fbb36956b1cd41e33dd9133394',1,'NBduino']]]
+  ['disconnect',['disconnect',['../class_n_bduino.html#ae013d9c6d18771efa34f9805039a0127',1,'NBduino']]]
 ];
