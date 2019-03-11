@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.14"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Arduino NBduino Library: D:/arduino-1.8.5/Portable/sketchbook/libraries/NBduinoLibrary/src/NBduinoLibrary.cpp File Reference</title>
+<title>Arduino NBduino Library: D:/arduino-1.8.8-try/Portable/sketchbook/libraries/NBduinoLibrary/src/NBduinoLibrary.cpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -23,6 +23,7 @@
   <td id="projectlogo"><img alt="Logo" src="logo TV per mail-01.jpg"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Arduino NBduino Library
+   &#160;<span id="projectnumber">0.11.0</span>
    </div>
   </td>
  </tr>
@@ -67,7 +68,8 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#func-members">Functions</a>  </div>
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
 <div class="title">NBduinoLibrary.cpp File Reference</div>  </div>
 </div><!--header-->
@@ -82,15 +84,30 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:a55e710efd7cb0e2a133dd52faeef118f"><td class="memItemLeft" align="right" valign="top"><a id="a55e710efd7cb0e2a133dd52faeef118f"></a>
+char *&#160;</td><td class="memItemRight" valign="bottom"><b>int2hex</b> (int number)</td></tr>
+<tr class="separator:a55e710efd7cb0e2a133dd52faeef118f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adb40b812890a8bc058bf6b7a0e1a54d9"><td class="memItemLeft" align="right" valign="top"><a id="adb40b812890a8bc058bf6b7a0e1a54d9"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>clean</b> ()</td></tr>
 <tr class="separator:adb40b812890a8bc058bf6b7a0e1a54d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a749bfb95821f1f2712dbc451cea01247"><td class="memItemLeft" align="right" valign="top"><a id="a749bfb95821f1f2712dbc451cea01247"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>getIMEI</b> (char *imei)</td></tr>
-<tr class="separator:a749bfb95821f1f2712dbc451cea01247"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac95792d19ae51b2fca46c4f69297c813"><td class="memItemLeft" align="right" valign="top"><a id="ac95792d19ae51b2fca46c4f69297c813"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>sync</b> ()</td></tr>
-<tr class="separator:ac95792d19ae51b2fca46c4f69297c813"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a456f33840580783e0a6405ee86158666"><td class="memItemLeft" align="right" valign="top"><a id="a456f33840580783e0a6405ee86158666"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>getIMEI</b> (char *imei)</td></tr>
+<tr class="separator:a456f33840580783e0a6405ee86158666"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3eb7f41182c04388c951db242c13f845"><td class="memItemLeft" align="right" valign="top"><a id="a3eb7f41182c04388c951db242c13f845"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>sync</b> ()</td></tr>
+<tr class="separator:a3eb7f41182c04388c951db242c13f845"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adc20457f80f9f9c130ceb3c07decebaf"><td class="memItemLeft" align="right" valign="top"><a id="adc20457f80f9f9c130ceb3c07decebaf"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>sendCommand</b> (char *command)</td></tr>
+<tr class="separator:adc20457f80f9f9c130ceb3c07decebaf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae9f054aa05ecba91ac5f10f4085f6140"><td class="memItemLeft" align="right" valign="top"><a id="ae9f054aa05ecba91ac5f10f4085f6140"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>sendCommand</b> (char *command, char *imei)</td></tr>
+<tr class="separator:ae9f054aa05ecba91ac5f10f4085f6140"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a66e9138711e179c2cd3ccc98f2829906"><td class="memItemLeft" align="right" valign="top"><a id="a66e9138711e179c2cd3ccc98f2829906"></a>
+void(*&#160;</td><td class="memItemRight" valign="bottom"><b>Reset</b> )(void)=0</td></tr>
+<tr class="separator:a66e9138711e179c2cd3ccc98f2829906"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>contains the <a class="el" href="class_n_bduino.html">NBduino</a> class mathods implementation. This class can be used to ease the programming of an Arduino sketch using the TopView <a class="el" href="class_n_bduino.html">NBduino</a> shield. </p>

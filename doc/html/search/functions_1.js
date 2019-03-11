@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['connect',['connect',['../class_n_bduino.html#a6fb245092697af20f39d21d92bfaa91a',1,'NBduino']]]
+  ['connect',['connect',['../class_n_bduino.html#ae6f5bcc9277d871d7697e3e993c25c09',1,'NBduino']]]
 ];

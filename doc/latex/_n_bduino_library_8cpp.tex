@@ -1,5 +1,5 @@
-\hypertarget{_n_bduino_library_8cpp}{}\section{D\+:/arduino-\/1.8.5/\+Portable/sketchbook/libraries/\+N\+Bduino\+Library/src/\+N\+Bduino\+Library.cpp File Reference}
-\label{_n_bduino_library_8cpp}\index{D\+:/arduino-\/1.\+8.\+5/\+Portable/sketchbook/libraries/\+N\+Bduino\+Library/src/\+N\+Bduino\+Library.\+cpp@{D\+:/arduino-\/1.\+8.\+5/\+Portable/sketchbook/libraries/\+N\+Bduino\+Library/src/\+N\+Bduino\+Library.\+cpp}}
+\hypertarget{_n_bduino_library_8cpp}{}\section{D\+:/arduino-\/1.8.8-\/try/\+Portable/sketchbook/libraries/\+N\+Bduino\+Library/src/\+N\+Bduino\+Library.cpp File Reference}
+\label{_n_bduino_library_8cpp}\index{D\+:/arduino-\/1.\+8.\+8-\/try/\+Portable/sketchbook/libraries/\+N\+Bduino\+Library/src/\+N\+Bduino\+Library.\+cpp@{D\+:/arduino-\/1.\+8.\+8-\/try/\+Portable/sketchbook/libraries/\+N\+Bduino\+Library/src/\+N\+Bduino\+Library.\+cpp}}
 
 
 contains the \mbox{\hyperlink{class_n_bduino}{N\+Bduino}} class mathods implementation. This class can be used to ease the programming of an Arduino sketch using the Top\+View \mbox{\hyperlink{class_n_bduino}{N\+Bduino}} shield.  
@@ -10,14 +10,29 @@ contains the \mbox{\hyperlink{class_n_bduino}{N\+Bduino}} class mathods implemen
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
+\mbox{\Hypertarget{_n_bduino_library_8cpp_a55e710efd7cb0e2a133dd52faeef118f}\label{_n_bduino_library_8cpp_a55e710efd7cb0e2a133dd52faeef118f}} 
+char $\ast$ {\bfseries int2hex} (int number)
+\item 
 \mbox{\Hypertarget{_n_bduino_library_8cpp_adb40b812890a8bc058bf6b7a0e1a54d9}\label{_n_bduino_library_8cpp_adb40b812890a8bc058bf6b7a0e1a54d9}} 
 {\bfseries clean} ()
 \item 
-\mbox{\Hypertarget{_n_bduino_library_8cpp_a749bfb95821f1f2712dbc451cea01247}\label{_n_bduino_library_8cpp_a749bfb95821f1f2712dbc451cea01247}} 
-{\bfseries get\+I\+M\+EI} (char $\ast$imei)
+\mbox{\Hypertarget{_n_bduino_library_8cpp_a456f33840580783e0a6405ee86158666}\label{_n_bduino_library_8cpp_a456f33840580783e0a6405ee86158666}} 
+bool {\bfseries get\+I\+M\+EI} (char $\ast$imei)
 \item 
-\mbox{\Hypertarget{_n_bduino_library_8cpp_ac95792d19ae51b2fca46c4f69297c813}\label{_n_bduino_library_8cpp_ac95792d19ae51b2fca46c4f69297c813}} 
-{\bfseries sync} ()
+\mbox{\Hypertarget{_n_bduino_library_8cpp_a3eb7f41182c04388c951db242c13f845}\label{_n_bduino_library_8cpp_a3eb7f41182c04388c951db242c13f845}} 
+bool {\bfseries sync} ()
+\item 
+\mbox{\Hypertarget{_n_bduino_library_8cpp_adc20457f80f9f9c130ceb3c07decebaf}\label{_n_bduino_library_8cpp_adc20457f80f9f9c130ceb3c07decebaf}} 
+void {\bfseries send\+Command} (char $\ast$command)
+\item 
+\mbox{\Hypertarget{_n_bduino_library_8cpp_ae9f054aa05ecba91ac5f10f4085f6140}\label{_n_bduino_library_8cpp_ae9f054aa05ecba91ac5f10f4085f6140}} 
+void {\bfseries send\+Command} (char $\ast$command, char $\ast$imei)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{_n_bduino_library_8cpp_a66e9138711e179c2cd3ccc98f2829906}\label{_n_bduino_library_8cpp_a66e9138711e179c2cd3ccc98f2829906}} 
+void($\ast$ {\bfseries Reset} )(void)=0
 \end{DoxyCompactItemize}
 
 

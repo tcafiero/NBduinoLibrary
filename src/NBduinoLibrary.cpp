@@ -13,6 +13,19 @@
 #include <NBduinoLibrary.h>
 
 static SoftwareSerial mySerial(10, 11); //RX, TX
+static char outword[1000];
+static const char hexdigit[] = "0123456789ABCDEF";
+static char hexnum[7];
+
+void(* Reset)(void) = 0;
+
+
+char* int2hex(int number){
+	hexnum[0]=hexdigit[(number>>4)&0xF];
+	hexnum[1]=hexdigit[number&0xF];
+	hexnum[3]=0;
+	return hexnum;
+}
 
 clean()
 {
@@ -26,33 +39,67 @@ clean()
 	}
 }
 
-getIMEI(char *imei)
+bool getIMEI(char* imei)
 {
-	char buffer[200];
+	char buffer[100];
 	int len;
-	int i,j;
-	j=0;
+	int i,j=0;
+	imei[0]=0;
+	mySerial.setTimeout(1000);
 	while(1)
 	{
-	len=mySerial.readBytesUntil('\n', buffer, 100);
+	len=mySerial.readBytesUntil('\n', buffer, sizeof(buffer));
+	if(len != 0)
+	{
 	for(i=0; i<len; i++) if((buffer[i] >= '0') && (buffer[i] <= '9')) imei[j++]=buffer[i];
 	if(strstr(buffer,"OK") != NULL)
 	{
 		imei[j]=0;
-		return;
+		return true;
 	}
+	}
+	else return false;
 	};
 }
 
-sync()
+bool sync()
 {
 	char buffer[200];
+	int len;
+	mySerial.setTimeout(1000);
 	while(1)
 	{
-	mySerial.readBytesUntil('\n', buffer, 100);
-	if(strstr(buffer,"OK") != NULL) return;
+	len=mySerial.readBytesUntil('\n', buffer, 100);
+	if(len == 0) return false;
+	if(strstr(buffer,"OK") != NULL) return true;
+	if(strstr(buffer,"ERROR") != NULL) return false;
 	};
 }
+
+void sendCommand(char* command)
+{
+	int i=0;
+	while(1)
+	{
+	clean();
+	mySerial.println(command);
+	if(sync()) return;
+	if(i++ > 3) Reset();
+	}
+}
+
+void sendCommand(char* command, char* imei)
+{
+	int i=0;
+	while(1)
+	{
+	clean();
+	mySerial.println(command);
+	if(getIMEI(imei)) return;
+	if(i++ > 3) Reset();
+	}
+}
+
 
 /**
 *	This method is the constructor of the NBduuino
@@ -66,13 +113,13 @@ NBduino::NBduino()
 /**
 *	This method is the constructor of the NBduuino
 *	@author	Antonio Cafiero
-*	@param mqttServer The name or the IP address of the MQTT broker (String)
+*	@param mqttServer The name or the IP address of the MQTT broker (char*)
 *	@param mqttPort The port number of the MQTT broker (Int)
-*	@param mqttUser The username enabeled to access the MQTT broker (String)
-*	@param mqttPassword The password to autenticate the userto access the MQTT broker (String)
+*	@param mqttUser The username enabeled to access the MQTT broker (char*)
+*	@param mqttPassword The password to autenticate the userto access the MQTT broker (char*)
 *	@date 14/12/2018
 */
-NBduino::NBduino(const String mqttServer, const int mqttPort, const String mqttUser, const String mqttPassword)
+NBduino::NBduino(const char * mqttServer, const int mqttPort, const char * mqttUser, const char * mqttPassword)
 {
     _mqttServer=mqttServer;
     _mqttPort=mqttPort;
@@ -84,14 +131,14 @@ NBduino::NBduino(const String mqttServer, const int mqttPort, const String mqttU
 /**
 *	This method is the constructor of the NBduuino
 *	@author	Antonio Cafiero
-*	@param mqttServer The name or the IP address of the MQTT broker (String)
+*	@param mqttServer The name or the IP address of the MQTT broker (char*)
 *	@param mqttPort The port number of the MQTT broker (Int)
-*	@param mqttUser The username enabeled to access the MQTT broker (String)
-*	@param mqttPassword The password to autenticate the userto access the MQTT broker (String)
+*	@param mqttUser The username enabeled to access the MQTT broker (char*)
+*	@param mqttPassword The password to autenticate the userto access the MQTT broker (char*)
 *	@param timeToConn The timeout in ms in connection phase (unsigned long)
 *	@date 14/12/2018
 */
-NBduino::NBduino(const String mqttServer, const int mqttPort, const String mqttUser, const String mqttPassword, unsigned long timeToConn)
+NBduino::NBduino(const char * mqttServer, const int mqttPort, const char * mqttUser, const char * mqttPassword, unsigned long timeToConn)
 {
     _mqttServer=mqttServer;
     _mqttPort=mqttPort;
@@ -106,7 +153,7 @@ NBduino::NBduino(const String mqttServer, const int mqttPort, const String mqttU
 *	@param APN The name or the APN (String)
 *	@date 14/12/2018
 */
-NBduino::setAPN(String APN)
+NBduino::setAPN(const char * APN)
 {
   mySerial.print("AT*MCGDEFCONT=");
   mySerial.print("\"");
@@ -144,24 +191,14 @@ bool NBduino::begin()
 {
     wakeup();
     mySerial.begin(4800);
-	clean();
-	mySerial.println("AT+CPIN?");
-	sync();
-	clean();
-	mySerial.println("AT+CSQ");
-	sync();
-	clean();
-	mySerial.println("AT+CGREG?");
-	sync();
-	clean();
-	mySerial.println("AT+CGACT?");
-	sync();
-	clean();
-	mySerial.println("AT+COPS?");
-	sync();
-	clean();
-	mySerial.println("AT+CGCONTRDP");
-	sync();	//delay(1500);
+	sendCommand("ATZ");
+	sendCommand("ATE0");
+	sendCommand("AT+CPIN?");
+	sendCommand("AT+CSQ");
+	sendCommand("AT+CGREG?");
+	sendCommand("AT+CGACT?");
+	sendCommand("AT+COPS?");
+	sendCommand("AT+CGCONTRDP");
 }
 
 /**
@@ -190,41 +227,42 @@ NBduino::sleep()
 }
 
 /**
-*	This method publish a string to the MQTT broker.
+*	This method publish a topic/value to the MQTT broker.
 *	@author	Antonio Cafiero
-*	@param topic The topic name for publishing (String)
-*	@param value The string to publish (String)
+*	@param topic The topic name for publishing (char*)
+*	@param value The string to publish (char*)
 *	@date 14/12/2018
 */
-NBduino::publish(const String topic, const String value)
+NBduino::publish(const char* topic, const char* value)
 {
 	char command[200];
-	sprintf(command,"AT+CMQPUB=0,\"%s\",1,0,0,%d,\"%s\"",topic.c_str(), value.length(), value.c_str());
+	char outcode[10];
+    unsigned int len, i;
+    len = strlen(value);
+	sprintf(command,"AT+CMQPUB=0,\"%s\",1,0,0,%d,\"",topic, len*2);
 	clean();
-	mySerial.println(command);
+	mySerial.print(command);
+	for(i = 0; i<len; i++) {
+		mySerial.print(int2hex(value[i]));
+    }
+	mySerial.println("\"");
 	sync();
 }
 
 /**
 *	This method connect to MQTT broker.
 *	@author	Antonio Cafiero
-*	@param clientname The unique name for MQTT connection (String)
+*	@param clientname The unique name for MQTT connection (char*)
 *	@date 8/3/2019
 */
-NBduino::connect(const String clientname)
+NBduino::connect(const char* clientname)
 {
 	char command[200];
-	sprintf(command,"AT+CMQNEW=\"%s\",\"%d\",12000,100",_mqttServer.c_str(),_mqttPort);
-	clean();
-	mySerial.println(command);
-	sync();
-	sprintf(command,"AT+CMQCON=0,3,\"%s\",600,0,0,\"%s\",\"%s\"", clientname.c_str(), _mqttUser.c_str(), _mqttPassword.c_str());
-	clean();
-	mySerial.println(command);
-	sync();
-	clean();
-	mySerial.println("AT+CREVHEX=0");
-	sync();
+	sprintf(command,"AT+CMQNEW=\"%s\",\"%d\",12000,1024",_mqttServer,_mqttPort);
+	sendCommand(command);
+	sprintf(command,"AT+CMQCON=0,3,\"%s\",20000,0,0,\"%s\",\"%s\"", clientname, _mqttUser, _mqttPassword);
+	sendCommand(command);
+	sendCommand("AT+CREVHEX=1");
     digitalWrite(_led, HIGH);    //LED OFF
 }
 
@@ -235,29 +273,17 @@ NBduino::connect(const String clientname)
 */
 NBduino::disconnect()
 {	
-    clean();
-	mySerial.println("AT+CMQDISCON=0");
-	sync();
+	sendCommand("AT+CMQDISCON=0");
     digitalWrite(_led, LOW);    //LED OFF
 }
 
 /**
-*	This method return the NBduno IMEI string (String).
+*	This method return the NBduno IMEI value.
 *	@author	Antonio Cafiero
+*	@param imei a pointer to buffer were IMEI is returned If no IMEI is read void string is returned (char*)
 *	@date 14/12/2018
 */
-String NBduino::reqIMEI()
+bool NBduino::reqIMEI(char* imei)
 {
-		char aMessage[200];
-		unsigned int messageSize;
-		char cha;
-		aMessage[0] = 0;
-        messageSize = 0;		// set message size to zero
-		delay(4000);
-		mySerial.flush();
-		clean();
-        mySerial.println("AT+GSN");
-		getIMEI(aMessage);
-		String exString = aMessage;
-		return aMessage;
+        sendCommand("AT+GSN", imei);
 }

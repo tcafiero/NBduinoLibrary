@@ -18,24 +18,24 @@ class NBduino
 {
   public:
 	NBduino();
-	NBduino(const String mqttServer, const int mqttPort, const String mqttUser, const String mqttPassword);
-	NBduino(const String mqttServer, const int mqttPort, const String mqttUser, const String mqttPassword, unsigned long timeToConn);
-	setAPN(String APN);
+	NBduino(const char* mqttServer, const int mqttPort, const char* mqttUser, const char* mqttPassword);
+	NBduino(const char* mqttServer, const int mqttPort, const char* mqttUser, const char* mqttPassword, unsigned long timeToConn);
+	setAPN(const char* APN);
 	bool begin();
 	wakeup();
 	sleep();
-	String reqIMEI();
-	publish(const String topic, const String value);
-	connect(const String clientname);
+	bool reqIMEI(char* imei);
+	publish(const char* topic, const char* value);
+	connect(const char* clientname);
 	disconnect();
   private:
 	const int _led=13;
 	const int _reset=7;
 	const int _pwrkey=8;
-	String _mqttServer;
+	const char * _mqttServer;
 	int _mqttPort;
-	String _mqttUser;
-	String _mqttPassword;
+	const char * _mqttUser;
+	const char * _mqttPassword;
 	unsigned long _lastTime;
 	unsigned long _timeToConn=120000;
 	char _inChar;

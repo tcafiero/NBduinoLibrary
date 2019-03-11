@@ -5,11 +5,11 @@
 \item 
 \mbox{\hyperlink{class_n_bduino_acd7c1c69bffccefc807ff89394732a7d}{N\+Bduino}} ()
 \item 
-\mbox{\hyperlink{class_n_bduino_af520a0691a464694c224aba7bd1b81f6}{N\+Bduino}} (const String mqtt\+Server, const int mqtt\+Port, const String mqtt\+User, const String mqtt\+Password)
+\mbox{\hyperlink{class_n_bduino_a33e6b13bdee69684a051f00a1a15ddd1}{N\+Bduino}} (const char $\ast$mqtt\+Server, const int mqtt\+Port, const char $\ast$mqtt\+User, const char $\ast$mqtt\+Password)
 \item 
-\mbox{\hyperlink{class_n_bduino_ac3902de83e4e090b90a984d7fd9fd148}{N\+Bduino}} (const String mqtt\+Server, const int mqtt\+Port, const String mqtt\+User, const String mqtt\+Password, unsigned long time\+To\+Conn)
+\mbox{\hyperlink{class_n_bduino_aa6755807828b9a368128681b05494b2b}{N\+Bduino}} (const char $\ast$mqtt\+Server, const int mqtt\+Port, const char $\ast$mqtt\+User, const char $\ast$mqtt\+Password, unsigned long time\+To\+Conn)
 \item 
-\mbox{\hyperlink{class_n_bduino_a9a903295305e847b3d68a7a6cc111316}{set\+A\+PN}} (String A\+PN)
+\mbox{\hyperlink{class_n_bduino_a25ed04c59841533708771bdd835a2572}{set\+A\+PN}} (const char $\ast$A\+PN)
 \item 
 bool \mbox{\hyperlink{class_n_bduino_ae8241f6dcfe492f00f8bef4b5d4b79a0}{begin}} ()
 \item 
@@ -17,11 +17,11 @@ bool \mbox{\hyperlink{class_n_bduino_ae8241f6dcfe492f00f8bef4b5d4b79a0}{begin}} 
 \item 
 \mbox{\hyperlink{class_n_bduino_ac7bf8f7f0552ad2cbda4b3e91a82bfca}{sleep}} ()
 \item 
-String \mbox{\hyperlink{class_n_bduino_a3d96fbfb52c89cd55e9a7a3f387c6945}{req\+I\+M\+EI}} ()
+bool \mbox{\hyperlink{class_n_bduino_acb71b20e54269da260903604482f1d33}{req\+I\+M\+EI}} (char $\ast$imei)
 \item 
-\mbox{\hyperlink{class_n_bduino_a1c9526fbb36956b1cd41e33dd9133394}{publish}} (const String topic, const String value)
+\mbox{\hyperlink{class_n_bduino_a3179d72e8766be6bd07892ddd4ad6be1}{publish}} (const char $\ast$topic, const char $\ast$value)
 \item 
-\mbox{\hyperlink{class_n_bduino_a6fb245092697af20f39d21d92bfaa91a}{connect}} (const String clientname)
+\mbox{\hyperlink{class_n_bduino_ae6f5bcc9277d871d7697e3e993c25c09}{connect}} (const char $\ast$clientname)
 \item 
 \mbox{\hyperlink{class_n_bduino_ae013d9c6d18771efa34f9805039a0127}{disconnect}} ()
 \end{DoxyCompactItemize}
@@ -49,26 +49,26 @@ Antonio Cafiero
 \end{DoxyDate}
 
 
-Definition at line 62 of file N\+Bduino\+Library.\+cpp.
+Definition at line 109 of file N\+Bduino\+Library.\+cpp.
 
-\mbox{\Hypertarget{class_n_bduino_af520a0691a464694c224aba7bd1b81f6}\label{class_n_bduino_af520a0691a464694c224aba7bd1b81f6}} 
+\mbox{\Hypertarget{class_n_bduino_a33e6b13bdee69684a051f00a1a15ddd1}\label{class_n_bduino_a33e6b13bdee69684a051f00a1a15ddd1}} 
 \index{N\+Bduino@{N\+Bduino}!N\+Bduino@{N\+Bduino}}
 \index{N\+Bduino@{N\+Bduino}!N\+Bduino@{N\+Bduino}}
 \subsubsection{\texorpdfstring{N\+Bduino()}{NBduino()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
-{\footnotesize\ttfamily N\+Bduino\+::\+N\+Bduino (\begin{DoxyParamCaption}\item[{const String}]{mqtt\+Server,  }\item[{const int}]{mqtt\+Port,  }\item[{const String}]{mqtt\+User,  }\item[{const String}]{mqtt\+Password }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily N\+Bduino\+::\+N\+Bduino (\begin{DoxyParamCaption}\item[{const char $\ast$}]{mqtt\+Server,  }\item[{const int}]{mqtt\+Port,  }\item[{const char $\ast$}]{mqtt\+User,  }\item[{const char $\ast$}]{mqtt\+Password }\end{DoxyParamCaption})}
 
 This method is the constructor of the N\+Bduuino \begin{DoxyAuthor}{Author}
 Antonio Cafiero 
 \end{DoxyAuthor}
 
 \begin{DoxyParams}{Parameters}
-{\em mqtt\+Server} & The name or the IP address of the M\+Q\+TT broker (String) \\
+{\em mqtt\+Server} & The name or the IP address of the M\+Q\+TT broker (char$\ast$) \\
 \hline
 {\em mqtt\+Port} & The port number of the M\+Q\+TT broker (Int) \\
 \hline
-{\em mqtt\+User} & The username enabeled to access the M\+Q\+TT broker (String) \\
+{\em mqtt\+User} & The username enabeled to access the M\+Q\+TT broker (char$\ast$) \\
 \hline
-{\em mqtt\+Password} & The password to autenticate the userto access the M\+Q\+TT broker (String) \\
+{\em mqtt\+Password} & The password to autenticate the userto access the M\+Q\+TT broker (char$\ast$) \\
 \hline
 \end{DoxyParams}
 \begin{DoxyDate}{Date}
@@ -76,26 +76,26 @@ Antonio Cafiero
 \end{DoxyDate}
 
 
-Definition at line 75 of file N\+Bduino\+Library.\+cpp.
+Definition at line 122 of file N\+Bduino\+Library.\+cpp.
 
-\mbox{\Hypertarget{class_n_bduino_ac3902de83e4e090b90a984d7fd9fd148}\label{class_n_bduino_ac3902de83e4e090b90a984d7fd9fd148}} 
+\mbox{\Hypertarget{class_n_bduino_aa6755807828b9a368128681b05494b2b}\label{class_n_bduino_aa6755807828b9a368128681b05494b2b}} 
 \index{N\+Bduino@{N\+Bduino}!N\+Bduino@{N\+Bduino}}
 \index{N\+Bduino@{N\+Bduino}!N\+Bduino@{N\+Bduino}}
 \subsubsection{\texorpdfstring{N\+Bduino()}{NBduino()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
-{\footnotesize\ttfamily N\+Bduino\+::\+N\+Bduino (\begin{DoxyParamCaption}\item[{const String}]{mqtt\+Server,  }\item[{const int}]{mqtt\+Port,  }\item[{const String}]{mqtt\+User,  }\item[{const String}]{mqtt\+Password,  }\item[{unsigned long}]{time\+To\+Conn }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily N\+Bduino\+::\+N\+Bduino (\begin{DoxyParamCaption}\item[{const char $\ast$}]{mqtt\+Server,  }\item[{const int}]{mqtt\+Port,  }\item[{const char $\ast$}]{mqtt\+User,  }\item[{const char $\ast$}]{mqtt\+Password,  }\item[{unsigned long}]{time\+To\+Conn }\end{DoxyParamCaption})}
 
 This method is the constructor of the N\+Bduuino \begin{DoxyAuthor}{Author}
 Antonio Cafiero 
 \end{DoxyAuthor}
 
 \begin{DoxyParams}{Parameters}
-{\em mqtt\+Server} & The name or the IP address of the M\+Q\+TT broker (String) \\
+{\em mqtt\+Server} & The name or the IP address of the M\+Q\+TT broker (char$\ast$) \\
 \hline
 {\em mqtt\+Port} & The port number of the M\+Q\+TT broker (Int) \\
 \hline
-{\em mqtt\+User} & The username enabeled to access the M\+Q\+TT broker (String) \\
+{\em mqtt\+User} & The username enabeled to access the M\+Q\+TT broker (char$\ast$) \\
 \hline
-{\em mqtt\+Password} & The password to autenticate the userto access the M\+Q\+TT broker (String) \\
+{\em mqtt\+Password} & The password to autenticate the userto access the M\+Q\+TT broker (char$\ast$) \\
 \hline
 {\em time\+To\+Conn} & The timeout in ms in connection phase (unsigned long) \\
 \hline
@@ -105,7 +105,7 @@ Antonio Cafiero
 \end{DoxyDate}
 
 
-Definition at line 94 of file N\+Bduino\+Library.\+cpp.
+Definition at line 141 of file N\+Bduino\+Library.\+cpp.
 
 
 
@@ -124,20 +124,20 @@ Antonio Cafiero
 \end{DoxyDate}
 
 
-Definition at line 143 of file N\+Bduino\+Library.\+cpp.
+Definition at line 190 of file N\+Bduino\+Library.\+cpp.
 
-\mbox{\Hypertarget{class_n_bduino_a6fb245092697af20f39d21d92bfaa91a}\label{class_n_bduino_a6fb245092697af20f39d21d92bfaa91a}} 
+\mbox{\Hypertarget{class_n_bduino_ae6f5bcc9277d871d7697e3e993c25c09}\label{class_n_bduino_ae6f5bcc9277d871d7697e3e993c25c09}} 
 \index{N\+Bduino@{N\+Bduino}!connect@{connect}}
 \index{connect@{connect}!N\+Bduino@{N\+Bduino}}
 \subsubsection{\texorpdfstring{connect()}{connect()}}
-{\footnotesize\ttfamily N\+Bduino\+::connect (\begin{DoxyParamCaption}\item[{const String}]{clientname }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily N\+Bduino\+::connect (\begin{DoxyParamCaption}\item[{const char $\ast$}]{clientname }\end{DoxyParamCaption})}
 
 This method connect to M\+Q\+TT broker. \begin{DoxyAuthor}{Author}
 Antonio Cafiero 
 \end{DoxyAuthor}
 
 \begin{DoxyParams}{Parameters}
-{\em clientname} & The unique name for M\+Q\+TT connection (String) \\
+{\em clientname} & The unique name for M\+Q\+TT connection (char$\ast$) \\
 \hline
 \end{DoxyParams}
 \begin{DoxyDate}{Date}
@@ -145,7 +145,7 @@ Antonio Cafiero
 \end{DoxyDate}
 
 
-Definition at line 214 of file N\+Bduino\+Library.\+cpp.
+Definition at line 258 of file N\+Bduino\+Library.\+cpp.
 
 \mbox{\Hypertarget{class_n_bduino_ae013d9c6d18771efa34f9805039a0127}\label{class_n_bduino_ae013d9c6d18771efa34f9805039a0127}} 
 \index{N\+Bduino@{N\+Bduino}!disconnect@{disconnect}}
@@ -161,22 +161,22 @@ Antonio Cafiero
 \end{DoxyDate}
 
 
-Definition at line 236 of file N\+Bduino\+Library.\+cpp.
+Definition at line 274 of file N\+Bduino\+Library.\+cpp.
 
-\mbox{\Hypertarget{class_n_bduino_a1c9526fbb36956b1cd41e33dd9133394}\label{class_n_bduino_a1c9526fbb36956b1cd41e33dd9133394}} 
+\mbox{\Hypertarget{class_n_bduino_a3179d72e8766be6bd07892ddd4ad6be1}\label{class_n_bduino_a3179d72e8766be6bd07892ddd4ad6be1}} 
 \index{N\+Bduino@{N\+Bduino}!publish@{publish}}
 \index{publish@{publish}!N\+Bduino@{N\+Bduino}}
 \subsubsection{\texorpdfstring{publish()}{publish()}}
-{\footnotesize\ttfamily N\+Bduino\+::publish (\begin{DoxyParamCaption}\item[{const String}]{topic,  }\item[{const String}]{value }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily N\+Bduino\+::publish (\begin{DoxyParamCaption}\item[{const char $\ast$}]{topic,  }\item[{const char $\ast$}]{value }\end{DoxyParamCaption})}
 
-This method publish a string to the M\+Q\+TT broker. \begin{DoxyAuthor}{Author}
+This method publish a topic/value to the M\+Q\+TT broker. \begin{DoxyAuthor}{Author}
 Antonio Cafiero 
 \end{DoxyAuthor}
 
 \begin{DoxyParams}{Parameters}
-{\em topic} & The topic name for publishing (String) \\
+{\em topic} & The topic name for publishing (char$\ast$) \\
 \hline
-{\em value} & The string to publish (String) \\
+{\em value} & The string to publish (char$\ast$) \\
 \hline
 \end{DoxyParams}
 \begin{DoxyDate}{Date}
@@ -184,29 +184,34 @@ Antonio Cafiero
 \end{DoxyDate}
 
 
-Definition at line 199 of file N\+Bduino\+Library.\+cpp.
+Definition at line 236 of file N\+Bduino\+Library.\+cpp.
 
-\mbox{\Hypertarget{class_n_bduino_a3d96fbfb52c89cd55e9a7a3f387c6945}\label{class_n_bduino_a3d96fbfb52c89cd55e9a7a3f387c6945}} 
+\mbox{\Hypertarget{class_n_bduino_acb71b20e54269da260903604482f1d33}\label{class_n_bduino_acb71b20e54269da260903604482f1d33}} 
 \index{N\+Bduino@{N\+Bduino}!req\+I\+M\+EI@{req\+I\+M\+EI}}
 \index{req\+I\+M\+EI@{req\+I\+M\+EI}!N\+Bduino@{N\+Bduino}}
 \subsubsection{\texorpdfstring{req\+I\+M\+E\+I()}{reqIMEI()}}
-{\footnotesize\ttfamily String N\+Bduino\+::req\+I\+M\+EI (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily bool N\+Bduino\+::req\+I\+M\+EI (\begin{DoxyParamCaption}\item[{char $\ast$}]{imei }\end{DoxyParamCaption})}
 
-This method return the N\+Bduno I\+M\+EI string (String). \begin{DoxyAuthor}{Author}
+This method return the N\+Bduno I\+M\+EI value. \begin{DoxyAuthor}{Author}
 Antonio Cafiero 
 \end{DoxyAuthor}
+
+\begin{DoxyParams}{Parameters}
+{\em imei} & a pointer to buffer were I\+M\+EI is returned If no I\+M\+EI is read void string is returned (char$\ast$) \\
+\hline
+\end{DoxyParams}
 \begin{DoxyDate}{Date}
 14/12/2018 
 \end{DoxyDate}
 
 
-Definition at line 249 of file N\+Bduino\+Library.\+cpp.
+Definition at line 286 of file N\+Bduino\+Library.\+cpp.
 
-\mbox{\Hypertarget{class_n_bduino_a9a903295305e847b3d68a7a6cc111316}\label{class_n_bduino_a9a903295305e847b3d68a7a6cc111316}} 
+\mbox{\Hypertarget{class_n_bduino_a25ed04c59841533708771bdd835a2572}\label{class_n_bduino_a25ed04c59841533708771bdd835a2572}} 
 \index{N\+Bduino@{N\+Bduino}!set\+A\+PN@{set\+A\+PN}}
 \index{set\+A\+PN@{set\+A\+PN}!N\+Bduino@{N\+Bduino}}
 \subsubsection{\texorpdfstring{set\+A\+P\+N()}{setAPN()}}
-{\footnotesize\ttfamily N\+Bduino\+::set\+A\+PN (\begin{DoxyParamCaption}\item[{String}]{A\+PN }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily N\+Bduino\+::set\+A\+PN (\begin{DoxyParamCaption}\item[{const char $\ast$}]{A\+PN }\end{DoxyParamCaption})}
 
 This method set the A\+PN \begin{DoxyAuthor}{Author}
 Antonio Cafiero 
@@ -221,7 +226,7 @@ Antonio Cafiero
 \end{DoxyDate}
 
 
-Definition at line 109 of file N\+Bduino\+Library.\+cpp.
+Definition at line 156 of file N\+Bduino\+Library.\+cpp.
 
 \mbox{\Hypertarget{class_n_bduino_ac7bf8f7f0552ad2cbda4b3e91a82bfca}\label{class_n_bduino_ac7bf8f7f0552ad2cbda4b3e91a82bfca}} 
 \index{N\+Bduino@{N\+Bduino}!sleep@{sleep}}
@@ -237,7 +242,7 @@ Antonio Cafiero
 \end{DoxyDate}
 
 
-Definition at line 185 of file N\+Bduino\+Library.\+cpp.
+Definition at line 222 of file N\+Bduino\+Library.\+cpp.
 
 \mbox{\Hypertarget{class_n_bduino_a8e740e7b90e6e75b7dd3b7900ee0dd22}\label{class_n_bduino_a8e740e7b90e6e75b7dd3b7900ee0dd22}} 
 \index{N\+Bduino@{N\+Bduino}!wakeup@{wakeup}}
@@ -253,11 +258,11 @@ Antonio Cafiero
 \end{DoxyDate}
 
 
-Definition at line 172 of file N\+Bduino\+Library.\+cpp.
+Definition at line 209 of file N\+Bduino\+Library.\+cpp.
 
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-D\+:/arduino-\/1.\+8.\+5/\+Portable/sketchbook/libraries/\+N\+Bduino\+Library/src/\mbox{\hyperlink{_n_bduino_library_8h}{N\+Bduino\+Library.\+h}}\item 
-D\+:/arduino-\/1.\+8.\+5/\+Portable/sketchbook/libraries/\+N\+Bduino\+Library/src/\mbox{\hyperlink{_n_bduino_library_8cpp}{N\+Bduino\+Library.\+cpp}}\end{DoxyCompactItemize}
+D\+:/arduino-\/1.\+8.\+8-\/try/\+Portable/sketchbook/libraries/\+N\+Bduino\+Library/src/\mbox{\hyperlink{_n_bduino_library_8h}{N\+Bduino\+Library.\+h}}\item 
+D\+:/arduino-\/1.\+8.\+8-\/try/\+Portable/sketchbook/libraries/\+N\+Bduino\+Library/src/\mbox{\hyperlink{_n_bduino_library_8cpp}{N\+Bduino\+Library.\+cpp}}\end{DoxyCompactItemize}
