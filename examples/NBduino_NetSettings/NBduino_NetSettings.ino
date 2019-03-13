@@ -20,9 +20,11 @@ void setup() {
   Serial.begin(115200);
   while (!Serial);
   Serial.println("Let's start!");
+  Serial.print("LEAVE THE MODULE ON FOR ABOUT ");
+  Serial.println("15 MIN (JUST FOR THE FIRST POWER ON)");
   delay(300);
+  NBiot.begin();
   NBiot.setAPN(APN);
-  Serial.println("WAIT UNTIL THE \"NET\" LED STARTS TO FLASH EVERY 1 SECOND");
   }
 
 void loop() { 
