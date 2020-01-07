@@ -9,7 +9,7 @@
 */
 
 
-#include <arduino.h>
+#include <Arduino.h>
 #include <NBduinoLibrary.h>
 
 static SoftwareSerial mySerial(10, 11); //RX, TX
